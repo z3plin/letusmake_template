@@ -1,0 +1,95 @@
+.pageHeader {
+    @include row-flex();
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(30) 0;
+
+    .headerLogo {
+        @include col();
+        @include size(1);
+        @include size-lg(2);
+        @include size-md(2);
+        @include size-sm(4);
+        @include size-xs(8);
+        @include to(576px) {
+            margin: 0 auto;
+        }
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .headerNav {
+        @include col();
+        @include size(6);
+        @include size-lg(6);
+        @include to(576px) {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    .navList {
+        @include row-flex();
+        @include col();
+        @include to(992px) {
+            font-size: rem(14);
+        }
+        justify-content: space-between;
+        font-size: rem(16);
+        font-family: "GothamMedium", Arial, Helvetica, sans-serif;
+        color: $colorNav;
+        text-transform: uppercase;
+    }
+
+}
+
+.navList__link {
+    @include to(576px){
+        width: 100%;
+        display: block;
+        padding: rem(20) 0;
+        font-size: rem(20);
+    }
+
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    color: $colorNav;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition: .3s all;
+    overflow: hidden;
+
+    &:hover {
+        color: $colorText;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 51%;
+        right: 51%;
+        bottom: 0;
+        background: $colorText;
+        height: 2px;
+        -webkit-transition-property: left, right;
+        transition-property: left, right;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+
+    &:hover::before,
+    &:focus::before,
+    &:active::before {
+        left: 0;
+        right: 0;
+    }
+}
