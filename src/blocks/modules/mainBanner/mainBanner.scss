@@ -4,12 +4,19 @@
     background-image: url("../img/hero-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    @include to(576px) {
+        height: 90vh;
+    }
 
     &__content {
+        @include row-flex();
         @include size(6);
         @include size-md(10);
         @include size-sm(12);
         @include size-xs(12);
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
         margin: 0 auto;
         padding: 8vh 0 8vh 0;
         text-align: center;
@@ -43,7 +50,7 @@
         height: rem(50);
         position: relative;
         margin: 0 auto;
-        margin-top: rem(80);
+        margin-top: auto;
         color:gray;
         background: white;
         border-radius: 50%;

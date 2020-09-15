@@ -1,0 +1,32 @@
+.featured {
+    margin: rem(50) 0 rem(-10) 0;
+
+    &__title {
+        margin-bottom: rem(50);
+    }
+
+    &__text {
+        @include size(8);
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__tiles {
+        @include row-flex();
+        justify-content: center;
+        margin-top: rem(50);
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    &__tile {
+        @include col();
+        @include size(4);
+        @include size-lg(4);
+        @include size-md(6);
+        @include size-sm(12);
+        @include size-xs(12);
+        margin-bottom: rem(60);
+    }
+}
