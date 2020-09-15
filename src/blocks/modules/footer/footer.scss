@@ -1,0 +1,30 @@
+.pageFooter {
+    background-color: $colorTitle;
+}
+
+.footer__wrapper {
+    @include row-flex();
+    @include to(576px) {
+        text-align: center;
+    }
+    justify-content: space-between;
+    padding: rem(30) 0;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
+    font-size: rem(16);
+    font-style: normal;
+}
+
+.footer__address {
+    @include col();
+    @include size-sm(12);
+    font-style: normal;
+}
+
+.footer__copy {
+    @include col();
+    @include size-sm(12);
+}
+
+.bold {
+    color: #ffffff;
+}
